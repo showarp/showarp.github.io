@@ -74,9 +74,9 @@ def _in_projection(...) -> Tuple[Tensor, Tensor, Tensor]:
 在这里我说一下我个人就自注意力机制中的QKV三个矩阵为什么能和查询，键，值这三个名词扯上联系的理解，我认为了解好这三个矩阵就可以在一定程度上了解transformer模型了。
 
 说实话我刚开始听见这个QKV的时候第一时间联想到了mysql或者python里面的字典🤣，但我认为这其中也确实是有点联系的，在这里我们借用一下[知乎上](https://zhuanlan.zhihu.com/p/338817680)的图片以便大家方便的了解QKV矩阵：
-![Alt text](../images/image-2.png)
-![Alt text](../images/image-3.png)
-![Alt text](../images/image-4.png)
+![img](../images/image-2.png)
+![img](../images/image-3.png)
+![img](../images/image-4.png)
 
 在上图中$Q$的每一行和$K$的每一列其实都代表着输入每个单词，这里假设我们输入的是"I have a apple"，$Q$和$K^T$相成就可以得到一个4*4的一个矩阵在这里其实就可以看出来何为self-attention，在注意力机制中模型可以知道某个单词自己相对于其他单词之间的权重，也就是注意力值，在这个句子中的I一个和apple是有很强的联系的，所以就可以从$QK^T_14$中得到I相较于Apple的注意力值，这仿佛就对应了mysql中的一个表，可以根据查询语句Q和表K查询到相应的注意力权重。然后根据这个注意力的权重去和$V$进行一个相乘得到一个Value也就是。
 
