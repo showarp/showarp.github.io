@@ -83,7 +83,7 @@ fun_features:
   # 为 subtitle 添加打字机效果
   # Typing animation for subtitle
   typing:
-    enable: true
+    enable: false
 
     # 打印速度，数字越大越慢
     # Typing speed, the larger the number, the slower
@@ -91,7 +91,7 @@ fun_features:
 
     # 游标字符
     # Cursor character
-    cursorChar: "_"
+    cursorChar: ""
 
     # 是否循环播放效果
     # If true, loop animation
